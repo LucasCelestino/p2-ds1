@@ -1,0 +1,16 @@
+spring:
+    datasource:
+        platform: postgres
+        url: jdbc:postgresql://ec2-3-231-82-226.compute-1.amazonaws.com:5432/daljuk9q6fnqii
+        username: ypucedvlzjeykp
+        password: e5c76918b264dac8733e02493a425f54f150417f1c00ecd557ff8c02b929c490
+        driverClassName: org.postgresql.Driver
+        initialization-mode: always
+        initialize: true
+        schema: classpath:/schema-postgresql.sql
+
+ 
+
+jpa: 
+    hibernate:
+        ddl-auto: create-drop
