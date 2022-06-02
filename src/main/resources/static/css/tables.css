@@ -1,0 +1,66 @@
+.table-wrapper .thead
+{
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    border-right: 1px solid rgb(168, 168, 168);
+    border-top: 1px solid rgb(168, 168, 168);
+    border-left: 1px solid rgb(168, 168, 168);
+}
+
+.table-wrapper button
+{
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #1CC0A0;
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+.table-wrapper .thead .item
+{
+    max-width: 240px;
+    padding: 10px 5px;
+    width: 100%;
+    background-color: #1CC0A0;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFF;
+    font-size: 14px;
+    border-right: 1px solid #07af8e;
+}
+
+.table-wrapper .tbody
+{
+    max-width: 900px;
+    width: 100%;
+}
+
+.table-wrapper .tbody .item-wrapper
+{
+    display: flex;
+    border-right: 1px solid rgb(168, 168, 168);
+    border-bottom: 1px solid rgb(168, 168, 168);
+    border-left: 1px solid rgb(168, 168, 168);
+    width: 100%;
+    
+}
+
+.table-wrapper .tbody .item-wrapper .item
+{
+    max-width: 240px;
+    padding: 5px 5px;
+    width: 100%;
+    background-color: rgb(253, 253, 253);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    border-right: 1px solid rgb(192, 192, 192);
+}
+
+.table-wrapper .tbody .item-wrapper .item:last-child
+{
+    display: flex;
+    justify-content: space-around;
+}

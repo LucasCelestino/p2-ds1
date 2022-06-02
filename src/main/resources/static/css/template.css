@@ -1,0 +1,86 @@
+@charset "ISO-8859-1";
+
+.main-container
+{
+    width: 100%;
+    display: flex;
+}
+
+.main-container .menu
+{
+    max-width: 250px;
+    width: 100%;
+    height: 768px !important;
+    max-height: 768px !important;
+    background-color: #293644;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-container .menu .div-title
+{
+    background-color: #293644;
+    color: #FFF;
+    height: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 50px;
+    width: 100%;
+    font-size: 23px;
+    font-weight: bold;
+    border-bottom: 2px solid #1d2630;
+}
+
+.main-container .menu .menu-item-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-container .menu .menu-item-wrapper a
+{
+    display: flex;
+    align-items: center;
+}
+
+.main-container .menu .menu-item-wrapper a img
+{
+    margin-right: 10px;
+}
+
+.main-container .menu .menu-item-wrapper .item
+{
+    height: 40px;
+    color: #FFF;
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 15px;
+    border-bottom: 1px solid #465669;
+}
+
+.main-container .main-content .header-wrapper
+{
+    height: 52px;
+    line-height: 50px;
+    color: #FFF;
+    background-color: #1CC0A0;
+    padding: 0 25px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-container .main-content
+{
+    width: 1500px !important;
+}
+
+.main-container .main-content .content-wrapper
+{
+    padding: 30px 25px;
+}
+
+.main-container .main-content .content-wrapper .header-content
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    height: 50px;
+}
