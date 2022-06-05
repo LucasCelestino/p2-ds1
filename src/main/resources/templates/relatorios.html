@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Painel de Controle - Relatórios</title> 
+    <link th:href="@{/css/reset.css}" rel="stylesheet" />
+    <link th:href="@{/css/template.css}" rel="stylesheet" />
+    <link th:href="@{/css/tables.css}" rel="stylesheet" />
+    <link th:href="@{/css/produtos/produtos.css}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="main-container">
+        <div class="menu">
+            <div class="div-title">
+                <h1>Dashboard</h1>
+            </div>
+            <nav class="menu-item-wrapper">
+                <a th:href="@{/}" class="item"><img th:src="@{/images/home.png}" width="20"> Home</a>
+                <a th:href="@{/clientes}" class="item"><img th:src="@{/images/user.png}" width="20"> Clientes</a>
+                <a th:href="@{/produtos}" class="item"><img th:src="@{/images/package.png}" width="20"> Produtos</a>
+                <a th:href="@{/relatorios}" class="item"><img th:src="@{/images/clipboard.png}" width="20"> Relatórios</a>
+            </nav>
+        </div>
+        <section class="main-content">
+            <header class="header-wrapper">
+                <p>Painel de Controle Administrativo</p>
+            </header>
+            <div class="content-wrapper">
+                <div class="header-content">
+                    <p>Dashboard - Relatórios</p>
+                </div>
+                <div class="table-wrapper">
+                    <a th:href="@{/relatorios/adicionar-relatorio}"><button>Adicionar Relatório</button></a>
+                    <div class="thead">
+                        <div class="item">Responsável</div>
+                        <div class="item">Assunto</div>
+                        <div class="item">Data do Relatório</div>
+                        <div class="item">Ações</div>
+                    </div>
+                    <div class="tbody">
+                        <div class="item-wrapper" th:each="relatorio : ${relatorios}">
+                            <div class="item" th:text="${relatorio.responsavel}">-</div>
+                            <div class="item" th:text="${relatorio.assunto}">-</div>
+                            <div class="item" th:text="${relatorio.dtrelatorio}">-</div>
+                            <div class="item">
+                            	<a th:href="@{/relatorios/ver-relatorio/{id}(id=${relatorio.id})}"><img th:src="@{/images/foreign.png}" width="16"></a>
+                                <a th:href="@{/relatorios/editar-relatorio/{id}(id=${relatorio.id})}"><img th:src="@{/images/pencil.png}" width="16"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <title>Painel de Controle - Relatórios</title> 
+    <link th:href="@{/css/reset.css}" rel="stylesheet" />
+    <link th:href="@{/css/template.css}" rel="stylesheet" />
+    <link th:href="@{/css/tables.css}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="main-container">
+        <div class="menu">
+            <div class="div-title">
+                <h1>Dashboard</h1>
+            </div>
+            <nav class="menu-item-wrapper">
+                <a th:href="@{/}" class="item"><img th:src="@{/images/home.png}" width="20"> Home</a>
+                <a th:href="@{/clientes}" class="item"><img th:src="@{/images/user.png}" width="20"> Clientes</a>
+                <a th:href="@{/produtos}" class="item"><img th:src="@{/images/package.png}" width="20"> Produtos</a>
+                <a th:href="@{/relatorios}" class="item"><img th:src="@{/images/clipboard.png}" width="20"> Relatórios</a>
+            </nav>
+        </div>
+        <section class="main-content">
+            <header class="header-wrapper">
+                <p>Painel de Controle Administrativo</p>
+            </header>
+            <div class="content-wrapper">
+                <div class="header-content">
+                    <p>Dashboard - Ver Relatório</p>
+                </div>
+                <div>
+                	<p class="relatorio-title">Responsável:</p>
+                	 <p class="relatorio-content" th:text="${relatorio.responsavel}"></p>
+                </div>
+                <div>            	
+                	<p class="relatorio-title">Assunto:</p>
+                	 <p class="relatorio-content" th:text="${relatorio.assunto}"></p>
+                </div>
+                <div>
+                	<p class="relatorio-title">Descrição:</p>
+                	 <p class="relatorio-content" th:text="${relatorio.descricao}"></p>
+                </div>
+                <div>            	
+                	<p class="relatorio-title">Data do Relatório:</p>
+                	 <p class="relatorio-content" th:text="${relatorio.dtrelatorio}"></p>
+                </div>
+                <a th:href="@{/relatorios}" class="relatorio-vlt">Voltar</a>
+            </div>  
+        </section>
+    </main>
+</body>
+</html>

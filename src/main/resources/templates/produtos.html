@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Painel de Controle - Produtos</title> 
+    <link th:href="@{/css/reset.css}" rel="stylesheet" />
+    <link th:href="@{/css/template.css}" rel="stylesheet" />
+    <link th:href="@{/css/tables.css}" rel="stylesheet" />
+    <link th:href="@{/css/produtos/produtos.css}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="main-container">
+        <div class="menu">
+            <div class="div-title">
+                <h1>Dashboard</h1>
+            </div>
+            <nav class="menu-item-wrapper">
+                <a th:href="@{/}" class="item"><img th:src="@{/images/home.png}" width="20"> Home</a>
+                <a th:href="@{/clientes}" class="item"><img th:src="@{/images/user.png}" width="20"> Clientes</a>
+                <a th:href="@{/produtos}" class="item"><img th:src="@{/images/package.png}" width="20"> Produtos</a>
+                <a th:href="@{/relatorios}" class="item"><img th:src="@{/images/clipboard.png}" width="20"> Relatórios</a>
+            </nav>
+        </div>
+        <section class="main-content">
+            <header class="header-wrapper">
+                <p>Painel de Controle Administrativo</p>
+            </header>
+            <div class="content-wrapper">
+                <div class="header-content">
+                    <p>Dashboard - Produtos</p>
+                </div>
+                <div class="table-wrapper">
+                    <a th:href="@{/produtos/adicionar-produto}"><button>Adicionar Produto</button></a>
+                    <div class="thead">
+                        <div class="item">Nome</div>
+                        <div class="item">Descrição</div>
+                        <div class="item">Preço</div>
+                        <div class="item">Qtd em Estoque</div>
+                        <div class="item">Ações</div>
+                    </div>
+                    <div class="tbody">
+                        <div class="item-wrapper" th:each="produto : ${produtos}">
+                            <div class="item" th:text="${produto.nome}">-</div>
+                            <div class="item" th:text="${produto.descricao}">-</div>
+                            <div class="item" th:text="'R$' + ${produto.preco}">-</div>
+                            <div class="item" th:text="${produto.estoque}">-</div>
+                            <div class="item">
+                                <a th:href="@{/produtos/editar-produto/{id}(id=${produto.id})}"><img th:src="@{/images/pencil.png}" width="16"></a>
+                                <form th:action="@{/produtos/deletar-produto/{id}(id=${produto.id})}" method="POST">
+                                	<input type="submit" value="X">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
+    </main>
+</body>
+</html>
