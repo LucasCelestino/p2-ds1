@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Painel de Controle - Adicionar Tarefa</title> 
+    <link th:href="@{/css/reset.css}" rel="stylesheet" />
+    <link th:href="@{/css/template.css}" rel="stylesheet" />
+    <link th:href="@{/css/forms.css}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="main-container">
+        <div class="menu">
+            <div class="div-title">
+                <h1>Dashboard</h1>
+            </div>
+            <nav class="menu-item-wrapper">
+                <a th:href="@{/}" class="item"><img th:src="@{/images/home.png}" width="20"> Home</a>
+                <a th:href="@{/clientes}" class="item"><img th:src="@{/images/user.png}" width="20"> Clientes</a>
+                <a th:href="@{/produtos}" class="item"><img th:src="@{/images/package.png}" width="20"> Produtos</a>
+                <a th:href="@{/relatorios}" class="item"><img th:src="@{/images/clipboard.png}" width="20"> Relatórios</a>
+            </nav>
+        </div>
+        <section class="main-content">
+            <header class="header-wrapper">
+                <p>Painel de Controle Administrativo</p>
+            </header>
+            <div class="content-wrapper">
+                <div class="header-content">
+                    <p>Dashboard - Adicionar Tarefas</p>
+                    <p style="color:green; font-size:15px; margin-top:8px;" th:text="${sucesso} ? 'Tarefa Inserida com Sucesso!' : ''"></p>
+                </div>
+                <div class="form-clients">
+                    <form action="#" th:action="@{/adicionar-tarefa}" method="POST" th:object="${tarefa}">
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" th:field="*{nome}">
+                        </div>
+                        <div class="form-group">
+                            <label for="responsavel">Responsável:</label>
+                            <input type="text" th:field="*{responsavel}">
+                        </div>
+                        <div class="form-group">
+                            <label for="preco">Data de Inicio:</label>
+                            <input type="date" th:field="*{inicio}">
+                        </div>
+                        <div class="form-group">
+                            <label for="preco">Data de Termino:</label>
+                            <input type="date" th:field="*{termino}">
+                        </div>
+                        <input type="submit" value="Cadastrar">
+                        <a class="back-a" th:href="@{/}">Voltar</a>
+                    </form>
+                </div>
+            </div>  
+        </section>
+    </main>
+</body>
+</html>

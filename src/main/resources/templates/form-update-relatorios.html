@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Painel de Controle - Adicionar Relatório</title> 
+    <link th:href="@{/css/reset.css}" rel="stylesheet" />
+    <link th:href="@{/css/template.css}" rel="stylesheet" />
+    <link th:href="@{/css/forms.css}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="main-container">
+        <div class="menu">
+            <div class="div-title">
+                <h1>Dashboard</h1>
+            </div>
+            <nav class="menu-item-wrapper">
+                <a th:href="@{/}" class="item"><img th:src="@{/images/home.png}" width="20"> Home</a>
+                <a th:href="@{/clientes}" class="item"><img th:src="@{/images/user.png}" width="20"> Clientes</a>
+                <a th:href="@{/produtos}" class="item"><img th:src="@{/images/package.png}" width="20"> Produtos</a>
+                <a th:href="@{/relatorios}" class="item"><img th:src="@{/images/clipboard.png}" width="20"> Relatórios</a>
+            </nav>
+        </div>
+        <section class="main-content">
+            <header class="header-wrapper">
+                <p>Painel de Controle Administrativo</p>
+            </header>
+            <div class="content-wrapper">
+                <div class="header-content">
+                    <p>Dashboard - Adicionar Relatório</p>
+                    <p style="color:green; font-size:15px; margin-top:8px;" th:text="${sucesso} ? 'Relatório Editado com Sucesso!' : ''"></p>
+                </div>
+                <div class="form-clients">
+                    <form action="#" th:action="@{/relatorios/editar-relatorio/{id}(id=${relatorio.id})}" method="POST" th:object="${relatorio}">
+                        <div class="form-group">
+                            <label for="nome">Assunto:</label>
+                            <input type="text" th:field="*{assunto}">
+                        </div>
+                        <div class="form-group">
+                            <label for="nome">Responsável:</label>
+                            <input type="text" th:field="*{responsavel}">
+                        </div>
+                        <div class="form-group">
+                            <label for="descricao">Descrição:</label>
+                            <textarea  cols="30" rows="10" th:field="*{descricao}"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="preco">Data do Relatório:</label>
+                            <input type="date" th:field="*{dtrelatorio}">
+                        </div>
+                        <input type="submit" value="Editar">
+                        <a class="back-a" th:href="@{/relatorios}">Voltar</a>
+                    </form>
+                </div>
+            </div>  
+        </section>
+    </main>
+</body>
+</html>
